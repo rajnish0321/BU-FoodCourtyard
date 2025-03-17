@@ -192,9 +192,6 @@ CREATE TABLE `tbl_client` (
 -- Dumping data for table `tbl_client`
 --
 
-INSERT INTO `tbl_client` (`id`, `name`, `gender`, `mob_no`, `reffering`, `address`, `created_date_time`, `delete_status`) VALUES
-(1, 'Rammolli Kallathil', 'Male', '8090809080', 'Subodh', 'Old Kanakapura Rd, Basavanagudi, Bengaluru, Karnataka 560004', '2022-09-25 05:32:57', 0),
-(2, 'Sachin Rajjan', 'Male', '8070809805', 'Akash', 'Plot No.8, Sahajan Colon, Kolkata', '2022-09-25 07:23:34', 0);
 
 -- --------------------------------------------------------
 
@@ -230,7 +227,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`) VALUES
-(1, 'mayuri.infospace@gmail.com', 'cd92a26534dba48cd785cdcc0b3e6bd1', 'mayuri.infospace@gmail.com');
+(1, 'rajnishsingh0421@gmail.com', 'cd92a26534dba48cd785cdcc0b3e6bd1', 'rajnishsingh0421@gmail.com');
 
 --
 -- Indexes for dumped tables
