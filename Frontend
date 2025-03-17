@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUFC - Bennett University Food Courtyard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Light Mode */
+        body {
+            background-color: #f8f8f8;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            padding: 10px 5%;
+        }
+
+        .social-icons i {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: #f4f4ec;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo i {
+            color: #c53b27;
+            margin-right: 5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .nav-links .active {
+            background: #d3d3c3;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .login-btn {
+            background: none;
+            border: 2px solid black;
+            padding: 8px 20px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        .menu-toggle, .dark-mode-toggle {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 85vh;
+            background: url('https://source.unsplash.com/1600x900/?food,restaurant') no-repeat center center/cover;
+            color: black;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero .content {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .explore-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid black;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .explore-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Dark Mode */
+        .dark-mode nav {
+            background: #333;
+        }
+
+        .dark-mode .nav-links a {
+            color: white;
+        }
+
+        .dark-mode .login-btn {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .dark-mode .hero .content {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: white;
+                width: 50%;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span><i class="fas fa-phone"></i> E23CSEUXXXX@bennett.edu.in</span>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <i class="fas fa-bowl-food"></i> <span>BUFC</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="login-btn">Log in</button>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        <button class="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="content">
+            <h1>Bennett University <br> Food Courtyard</h1>
+            <p>Discover delectable cuisine and unforgettable moments <br> in our welcoming, culinary haven.</p>
+            <button class="explore-btn">Explore Menu</button>
+        </div>
+    </header>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            // Change Icon
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Explore Button Animation
+        const exploreBtn = document.querySelector('.explore-btn');
+
+        exploreBtn.addEventListener('click', () => {
+            exploreBtn.innerHTML = "Loading...";
+            setTimeout(() => {
+                exploreBtn.innerHTML = "Explore Menu";
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>
